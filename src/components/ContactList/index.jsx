@@ -6,6 +6,7 @@ import { selectIsLoading, selectError} from "../../redux/selectors";
 import { Filter } from "components/Filter";
 import { fetchContacts } from "../../api/contacts";
 import { useEffect } from "react";
+import { NavLink } from 'react-router-dom';
 export const ContactList = () => {
     const contacts = useSelector(selectFilteredContacts)
     const dispatch = useDispatch();
@@ -20,7 +21,8 @@ export const ContactList = () => {
   }, [dispatch])
     
     return (
-    <>
+      <>
+       <NavLink to='/'>Back</NavLink>
 <ContactsForm />
       <Filter/>
       <h2>Contacts</h2>

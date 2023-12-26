@@ -14,7 +14,7 @@ export const ContactsForm = (fu) => {
 
       const handleSubmit = (e) => {
 		e.preventDefault()
-          dispatch(addContact({ name, phone }))
+          dispatch(addContact({ name, number:phone }))
         reset()
 	}
     const handleNameChange = evt => {

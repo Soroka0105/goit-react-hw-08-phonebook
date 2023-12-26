@@ -13,7 +13,7 @@ export const ContactElement = ({ elm }) => {
         <li className={css.item}>
             
 <p className={css.elm}>{elm.name}</p>
-<p className={css.elm}>{elm.phone}</p>
+<p className={css.elm}>{elm.number}</p>
 <button type="button" onClick={handleDelete}>Delete</button>
         
         </li>
