@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-
+import css from './registration.module.css'
 export const FormRegistration = ({ register }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -13,19 +13,19 @@ export const FormRegistration = ({ register }) => {
 		form.reset();
 	}
 	return (
-		<div className='' style={{ width: 500 }}>
+		<div className={css.formsignup} style={{ width: 500 }}>
 			<form onSubmit={handleSubmit}>
-				<Link type='button' className='' to='/'>
+				<Link type='button' className={css.link} to='/'>
 					go home
 				</Link>
-				<div className='mb-3'>
+				<div className={css.emailelm}>
 					<label htmlFor='exampleInputEmail1' className=''>
 						Email address
 					</label>
 					<input
 						type='email'
 						name='email'
-						className=''
+						className={css.formstyling}
 						id='exampleInputEmail1'
 						aria-describedby='emailHelp'
 					/>
@@ -37,7 +37,7 @@ export const FormRegistration = ({ register }) => {
 					<label htmlFor='exampleInputName' className=''>
 						Name
 					</label>
-					<input type='text' name='name' className='' id='exampleInputName' />
+					<input className={css.formstyling} type='text' name='name'  id='exampleInputName' />
 				</div>
 				<div className=''>
 					<label htmlFor='exampleInputPassword1' className=''>
@@ -46,15 +46,15 @@ export const FormRegistration = ({ register }) => {
 					<input
 						name='password'
 						type='password'
-						className=''
+						className={css.formstyling}
 						id='exampleInputPassword1'
 					/>
 				</div>
-				<button type='submit' className=''>
+				<button type='submit' className={css.signupbtn}>
 					Register
 				</button>
 			</form>
-			<Link to='/login'>Login</Link>
+			<Link className={css.link} to='/login'>Login</Link>
 		</div>
 	)
 }

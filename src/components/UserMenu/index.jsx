@@ -1,13 +1,20 @@
-import { RegistrationPage } from 'Pages/RegistrationPage';
-import { Navigation } from 'components/Navigation';
+
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../../redux/selectors';
+import { selectUser } from '../../redux/selectors';
+import css from './index.module.css'
 
 export const UserMenu = () => {
-    const isLoggedIn = useSelector(selectIsLoggedIn)
+    const user = useSelector(selectUser)
+
+
     return (
         <>
-            {isLoggedIn ? <Navigation /> : <RegistrationPage />}
+            <div className={css.wrapper}>
+                <p className={css.username}>Welcome</p>
+                <p className={css.username}>{user.email}</p>
+                
+            </div>
+           
             
         </>
 )

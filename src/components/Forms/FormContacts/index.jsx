@@ -1,7 +1,7 @@
 import { addContact } from 'api/contacts'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-
+import css from './contactform.module.css'
 export const ContactsForm = (fu) => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState("")
@@ -26,10 +26,12 @@ export const ContactsForm = (fu) => {
 
     
     return (
-            <form onSubmit={handleSubmit}>
-                <input value={name} type="text" name='name' onChange={handleNameChange} required />
-                <input value={phone} type="tel" name='phone' onChange={handlePhoneChange} required/>
-                <button type='submit'>Add Contact</button>
+        <form className={css.addcontactform} onSubmit={handleSubmit}>
+            <label htmlFor="exampleInputName">Name</label>
+            <input className={css.formstyling} value={name} type="text" name='name' onChange={handleNameChange} required />
+            <label htmlFor="exampleInputNumber">Phone Number</label>
+                <input className={css.formstyling} value={phone} type="tel" name='phone' onChange={handlePhoneChange} required/>
+                <button className={css.submitbtn} type='submit'>Add Contact</button>
             </form>
         )
     

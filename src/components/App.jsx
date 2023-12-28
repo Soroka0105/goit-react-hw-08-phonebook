@@ -1,15 +1,26 @@
 
 import { ContactList } from "./ContactList";
 import { Route, Routes} from 'react-router-dom'
-import { persistor, store } from ".././redux/store";
-import { Provider } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import { LoginPage } from "Pages/LoginPage";
 import { RegistrationPage } from "Pages/RegistrationPage";
-import { PersistGate } from 'redux-persist/integration/react'
 import { Layout } from "Layout";
+import { RestrictedRoute } from "./RestrictedRoute";
+import { useEffect } from "react";
+import { refreshUser } from "api/auth";
+import { selectIsRefreshing } from "../redux/selectors";
+
+
+
 
 
 export const App = () => {
+  const dispatch = useDispatch()
+  const isRefreshing = useSelector(selectIsRefreshing)
+  useEffect(() => {
+dispatch(refreshUser())
+  }, [dispatch])
+  
   return (
     <div
       style={{
@@ -21,16 +32,15 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      <PersistGate loading={null} persistor={persistor}></PersistGate>
-      <Provider store={store}>
+      {isRefreshing && <p>Refreshing</p> }
       <Routes>
-        <Route path="/" element={<Layout/>} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/registration' element={<RegistrationPage />} />
+            <Route path="/" element={<Layout />} />
+
+          <Route path='/login' element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage/>} />} />
+          <Route path='/registration' element={<RestrictedRoute redirectTo="/contacts" component={<RegistrationPage/>} />} />
           <Route path='/contacts' element={<ContactList/> } />
         </Routes>
-  </Provider>
-   
+ 
       
     </div>
   );

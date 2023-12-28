@@ -1,0 +1,24 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+}
+.link:hover {
+  text-decoration: underline;
+  color: #e84a5f;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+}
+.link.active {
+  color: #e84a5f;
+}
+.link:focus {
+  text-decoration: underline;
+  color: #e84a5f;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+}

@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+.link {
+  display: inline-block;
+  text-decoration: none;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+  font-weight: 700;
+  color: #2a363b;
+}
+.link:hover {
+  text-decoration: underline;
+  color: #e84a5f;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+}
+.link:focus {
+  text-decoration: underline;
+  color: #e84a5f;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+}
+.link.active {
+  color: #e84a5f;
+}
+.logoutbtn {
+  width: 100px;
+  font-weight: 700;
+  font-size: 13px;
+  padding-top: 8px;
+  height: 35px;
+  border: none;
+  background-color: antiquewhite;
+  border-radius: 20px;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+}
+.logoutbtn:hover {
+  background-color: aquamarine;
+  color: orangered;
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
+  padding-top: 14px;
+}

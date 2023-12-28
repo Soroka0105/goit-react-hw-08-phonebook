@@ -14,7 +14,7 @@ export const ContactElement = ({ elm }) => {
             
 <p className={css.elm}>{elm.name}</p>
 <p className={css.elm}>{elm.number}</p>
-<button type="button" onClick={handleDelete}>Delete</button>
+<button className={css.deletebtn} type="button" onClick={handleDelete}>Delete</button>
         
         </li>
     )

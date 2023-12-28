@@ -1,13 +1,15 @@
 import { Outlet } from 'react-router-dom'
-
-import { UserMenu } from 'components/UserMenu'
-
+import { AppBar } from 'components/AppBar'
+import { Suspense } from 'react';
 
 export const Layout = () => {
     return (
         <>
-            <UserMenu/>
+            <AppBar />
+            <Suspense fallback={null}>
             <Outlet />
+            </Suspense>
+            
             </>
     )
 }

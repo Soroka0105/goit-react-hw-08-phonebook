@@ -1,7 +1,27 @@
-.item{
-    display: flex;
-    
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 100%;
 }
 .elm {
-    margin: 0;
+  width: 100%;
+  margin: 0;
+}
+.deletebtn {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(16, 89, 255, 1);
+  transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+  transition-duration: 0.3s;
 }
