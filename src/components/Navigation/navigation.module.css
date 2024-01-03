@@ -28,13 +28,13 @@
   color: #e84a5f;
 }
 .logoutbtn {
-  width: 100px;
+  width: 130px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   padding-top: 8px;
   height: 35px;
   border: none;
-  background-color: antiquewhite;
+  background-color: aqua;
   border-radius: 20px;
   transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
   transition-duration: 0.3s;
